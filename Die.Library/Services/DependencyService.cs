@@ -10,28 +10,18 @@ namespace Die.Library.Services
     public static class DependencyService
     {
 
-        /// <summary>
-        /// The unity container
-        /// </summary>
         private static Lazy<IUnityContainer> container = new Lazy<IUnityContainer>(() =>
         {
             var container = new UnityContainer();
             return container;
         });
 
-        /// <summary>
-        /// Gets the configured Unity container
-        /// </summary>
-        /// <returns>An IUnityContainer</returns>
+        // It does not need to be ocnfigured
         public static IUnityContainer GetConfiguredContainer()
         {
             return container.Value;
         }
-
-        /// <summary>
-        /// Resolves the type parameter T to an instance of the appropriate type.
-        /// </summary>
-        /// <typeparam name="T">Type of object to return</typeparam>
+        
         public static T Resolve<T>()
         {
             T ret = default(T);
