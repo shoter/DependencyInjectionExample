@@ -21,7 +21,10 @@ namespace Die.Library.Services
         {
             return container.Value;
         }
-        
+       [Obsolete("This is obsolete"
+           , error: false //turn to true at XX.YY.ZZZZ 
+            
+            )] 
         public static T Resolve<T>()
         {
             T ret = default(T);
